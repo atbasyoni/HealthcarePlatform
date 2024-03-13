@@ -12,11 +12,11 @@ namespace HealthcarePlatform.Models
             
         }
 
-        public override DbSet<User> Users { get; set; }
         public override DbSet<IdentityRole> Roles { get; set; }
 
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<Doctor> Doctors { get; set; }
+        public DbSet<Patient> Patients { get; set; }
         public DbSet<Specialization> Specializations { get; set; }
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<TimeSlot> TimeSlots { get; set; }

@@ -12,24 +12,24 @@ namespace HealthcarePlatform.Repositories
             this.context = context;
         }
 
-        public async Task<IEnumerable<User>> GetAllPatientsAsync()
+        public async Task<List<Patient>> GetAllPatientsAsync()
         {
-            return await context.Users.ToListAsync();
+            return await context.Patients.ToListAsync();
         }
 
-        public async Task<User> GetPatientByIdAsync(int id)
+        public async Task<Patient> GetPatientByIdAsync(int id)
         {
-            return await context.Users.FindAsync(id);
+            return await context.Patients.FindAsync(id);
         }
 
-        public async Task<User> CreatePatientAsync(User patient)
+        public async Task<Patient> CreatePatientAsync(Patient patient)
         {
-            context.Users.Add(patient);
+            context.Patients.Add(patient);
             await context.SaveChangesAsync();
             return patient;
         }
 
-        public async Task<User> UpdatePatientAsync(int id, User patient)
+        public async Task<Patient> UpdatePatientAsync(int id, Patient patient)
         {
             context.Entry(patient).State = EntityState.Modified;
             await context.SaveChangesAsync();
@@ -38,10 +38,10 @@ namespace HealthcarePlatform.Repositories
 
         public async Task DeletePatientAsync(int id)
         {
-            var patient = await context.Users.FindAsync(id);
+            var patient = await context.Patients.FindAsync(id);
             if (patient != null)
             {
-                context.Users.Remove(patient);
+                context.Patients.Remove(patient);
                 await context.SaveChangesAsync();
             }
         }

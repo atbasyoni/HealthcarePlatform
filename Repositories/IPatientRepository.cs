@@ -4,10 +4,10 @@ namespace HealthcarePlatform.Repositories
 {
     public interface IPatientRepository
     {
-        Task<User> CreatePatientAsync(User patient);
+        Task<Patient> CreatePatientAsync(Patient patient);
         Task DeletePatientAsync(int id);
-        Task<IEnumerable<User>> GetAllPatientsAsync();
-        Task<User> GetPatientByIdAsync(int id);
-        Task<User> UpdatePatientAsync(int id, User patient);
+        Task<List<Patient>> GetAllPatientsAsync();
+        Task<Patient> GetPatientByIdAsync(int id);
+        Task<Patient> UpdatePatientAsync(int id, Patient patient);
     }
 }

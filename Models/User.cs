@@ -2,8 +2,8 @@
 
 namespace HealthcarePlatform.Models
 {
-    enum Gender { male, female }
-    enum UserType { admin, doctor, patient }
+    public enum Gender { male, female }
+    public enum UserType { admin, doctor, patient }
 
     public class User : IdentityUser
     {
@@ -13,7 +13,5 @@ namespace HealthcarePlatform.Models
         public string Image { get; set; }
         UserType UserType { get; set; }
         Gender Gender { get; set; }
-
-        public virtual List<Ticket> Tickets { get; set; }
     }
 }
