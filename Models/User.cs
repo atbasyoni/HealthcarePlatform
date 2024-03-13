@@ -14,6 +14,6 @@ namespace HealthcarePlatform.Models
         UserType UserType { get; set; }
         Gender Gender { get; set; }
 
-        public List<Ticket> Tickets { get; set; }
+        public virtual List<Ticket> Tickets { get; set; }
     }
 }

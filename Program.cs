@@ -1,4 +1,7 @@
 
+using HealthcarePlatform.Models;
+using Microsoft.EntityFrameworkCore;
+
 namespace HealthcarePlatform
 {
     public class Program
@@ -6,6 +9,10 @@ namespace HealthcarePlatform
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            // Database Connection
+            builder.Services.AddDbContext<AppDbContext>(options => 
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             // Add services to the container.
 

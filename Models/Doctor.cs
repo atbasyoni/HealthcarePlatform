@@ -1,8 +1,14 @@
-﻿namespace HealthcarePlatform.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace HealthcarePlatform.Models
 {
     public class Doctor : User
     {
-        Specialization Specialization { get; set; }
-        public List<Appointment> Appointments { get; set; }
+        // Foreign Keys
+        public int SpecializationId { get; set; }
+
+        [ForeignKey("SpecializationId")]
+        public virtual Specialization Specialization { get; set; }
+        public virtual List<Appointment> Appointments { get; set; }
     }
 }
